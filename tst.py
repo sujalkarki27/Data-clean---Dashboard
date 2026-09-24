@@ -7,9 +7,6 @@ import seaborn as sns
 plt.style.use("ggplot")
 sns.set(font_scale=1)
 
-# ============================================
-# Load Dataset
-# ============================================
 
 df = pd.read_csv("train.csv")
 
@@ -22,9 +19,9 @@ print("\nDataset Shape:", df.shape)
 print("\nDataset Info")
 print(df.info())
 
-# ============================================
+
 # Missing Value Handling
-# ============================================
+
 
 print("\nMissing Values Before Cleaning")
 print(df.isnull().sum())
@@ -46,9 +43,9 @@ for col in cat_cols:
 print("\nMissing Values After Cleaning")
 print(df.isnull().sum())
 
-# ============================================
+
 # Remove Outliers using IQR
-# ============================================
+
 
 numeric_columns = df.select_dtypes(include=np.number).columns
 
@@ -67,9 +64,9 @@ for col in numeric_columns:
 print("\nShape After Removing Outliers")
 print(df.shape)
 
-# ============================================
+
 # Statistical Summary
-# ============================================
+
 
 print("\nSummary Statistics")
 print(df.describe())
